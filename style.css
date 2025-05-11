@@ -55,7 +55,7 @@ header {
 /*for main page*/
 .hero {
     height: 100vh;
-    background: url('images/mainbg.jpg') no-repeat center/cover;
+    background: url('images/main.bg.jpg') no-repeat center/cover;
     color: white;
     display: flex;
     justify-content: space-between;
