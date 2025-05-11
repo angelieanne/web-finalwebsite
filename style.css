@@ -1,0 +1,650 @@
+/* Reset default styles for unordered lists */
+ul, .menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* for header, transparent background*/
+header {
+    background: rgba(155, 122, 72, 0.7);
+    padding: 5px 10px;
+    border-bottom: 2px solid white;
+    position: fixed;
+    top: 0;
+    width: 97.5%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+/* Navbar container to hold the menu*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* style for logo */
+.logo {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+
+/* style for menu list */
+.menu ul {
+    display: flex;
+    gap: 10px;
+}
+
+/* style for each link in the menu */
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for menu links */
+.menu ul li a:hover {
+    background-color: #d3cdbe;
+    border-radius: 5px;
+}
+/*for main page*/
+.hero {
+    height: 100vh;
+    background: url('images/mainbg.png') no-repeat center/cover;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+/* main page content container */
+.hero-content {
+    max-width: 50%;
+    margin-top: -200px;
+}
+
+/* h1 in the hero section */
+.hero h1 {
+    font-size: 80px;
+    font-weight: bold;
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for the hero heading */
+.hero h1:hover {
+    text-shadow: 0 0 10px #f5f5f5;
+}
+
+/* Paragraph text styling in the hero section */
+.hero p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+/* Button container in the hero section */
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* style fo button base */
+.btn {
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* style for primary button */
+.primary {
+    background-color: #d2691e;
+    color: white;
+}
+
+/* Hover effect for primary button */
+.primary:hover {
+    background-color: #a0522d;
+}
+
+/* style for hero image container */
+.hero-image {
+    width: 1000%;
+    max-width: 500px;
+    margin-top: 19px;
+}
+
+/* Style for the image inside the hero section */
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    margin-top: -120px;
+    transition: transform 0.5s;
+}
+
+/* Hover effect for the hero image */
+.hero-image img:hover {
+    transform: scale(1.1);
+}
+
+/* style for footer */
+footer {
+    background-color: #6f4e37;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 10px;
+}
+
+/* Footer content container */
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* style for footer p */
+.footer-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Animation keyframes for sliding in from left */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Animation keyframes for sliding in from right */
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in animation keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Apply Animation to Hero Elements for additional motion */
+.hero-content h1 {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.hero-content p {
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.hero-content .buttons {
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.hero-image img {
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* About Us Section */
+.about-us {
+    height: 80vh;
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    align-items: center;
+    padding: 80px 10%;
+    background: url('images/bg2.png') no-repeat center/cover;
+    background-color: #fdf8f3;
+    overflow: hidden;
+}
+
+/* style for about text sec*/
+.about-text {
+    opacity: 0;
+    transform: translateX(-50px); /* Start from the left */
+    animation: fadeInLeft 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+    max-width: 600px;
+}
+
+/* style for about heading */
+.about-text h3 {
+    font-size: 25px;
+    color: #b5651d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* stle for h1 */
+.about-text h1 {
+    font-size: 50px;
+    color: #4b2e1e;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* style for p */
+.about-text p {
+    font-size: 18px;
+    color: #5a4033;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* style for work */
+.work {
+    flex: 1; /* Take up equal space */
+    text-align: left;
+    animation: fadeInUp 1.6s ease-out;
+}
+
+/* style for work h3 */
+.work h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4b2e1e;
+    margin-bottom: 20px;
+}
+
+/* style for work p */
+.work p {
+    font-size: 1.1rem;
+    line-height: 0.5;
+    color: #5a405a;
+    margin-bottom: 15px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* design for tablet and below adjustments*/
+@media (max-width: 1024px) {
+    /* Adjust About Us container layout for smaller screens */
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Remove animation delay on small screens */
+    .about-text {
+        transform: translateX(0);
+    }
+
+    /* Adjust font size for About Us section on smaller screens */
+    .about-text h1 {
+        font-size: 40px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+    }
+
+    /* Background image adjustments for mobile */
+    .about-us {
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* ===== MENU SECTION ONLY ===== */
+.menu-section {
+    background: url('images/bg3.jpg') no-repeat center/cover;
+    height: 240vh;
+    padding-top: 90px;
+    text-align: center;
+    background-color: #fffaf0;
+}
+
+/* style for menu h1*/
+.menu-section h1 {
+    font-size: 3rem;
+    color: #f8ece4;
+    margin-bottom: 30px;
+}
+
+/* style for menu container */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px;
+}
+
+/* style for indiv menu item */
+.menu-item {
+    width: 235px;
+    background-color: #f3eede;
+    border: 1px solid #e0d8c0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for menu items */
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* style for img within menu item */
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* style for menu item h3 */
+.menu-item h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* style for img within menu item */
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* style for menu item h3 */
+.menu-item h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+/* styles for table */
+.item-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.item-table th,
+.item-table td {
+    border: 1px solid #aaa;
+    padding: 6px;
+    text-align: center;
+}
+
+.item-table th {
+    background-color: #6f4e37;
+    color: white;
+}
+
+.item-table tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+/* === CONTACT PAGE === */
+/* style for contact section */
+.contact-section {
+    background: url('images/bg4.png') no-repeat center/cover;
+    padding: 175px 135px;
+    background-color: #fdf8f3;
+    text-align: left;
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* style for contact sec h1*/
+.contact-section h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #4f2f19;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* style for contact container */
+.contact-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* style for contact info */
+.contact-info {
+    text-align: left;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+/* style for contact info p*/
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #4f2f19;
+    margin-bottom: 15px;
+}
+
+/* Style for follow us */
+.follow-us {
+    margin-top: 40px;
+    text-align: left;
+    animation: fadeInUp 1.8s ease-out;
+}
+
+/* style for social links */
+.social-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* style for social link h2*/
+.social-links h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4f2f19;
+    margin-bottom: 20px;
+}
+
+/* Style for each social media link*/
+.social-links li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Styling for social media links */
+.social-links a {
+    color: #4f2f19;
+    text-decoration: none;
+}
+
+.social-links a i {
+    margin-right: 8px;
+}
+
+/* Hover effect for social media links */
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Fade In Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* style for footer */
+footer {
+    background-color: #b78b6f;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* style for footer p */
+.footer-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #513921;
+    color: rgb(133, 97, 57);
+    font-size: 28px;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .cart-icon:hover {
+    background-color: #efe6d3;
+  }
+
+  .cart-icons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #efe6d3;
+    color: rgb(133, 97, 57); 
+    font-size: 28px;
+    padding: 12px 16px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .cart-icons:hover {
+    background-color: #513921;
+  }
+  
+  .product-container {
+    display: flex;
+    border: 3px solid #ded9c0;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 800px;
+    height: 350px;
+    background-color: #fcf4e3;
+    box-shadow: 0 8px 16px rgba(233, 230, 230, 0.2);
+    gap: 40px;
+    padding: 30px;
+  }
+  .product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    border: 2px solid #e8e7cf;
+    background-color: #857249;
+    padding: 10px;
+  }
+  .product-image:hover {
+   transform: scale(1.05);
+   }
+  .product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* <-- align to the left side */
+    text-align: left; /* <-- text align left */
+  }
+  .product-details h2 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    
+  }
+  .product-description {
+    font-size: 20px;
+    color: #241407;
+    margin-bottom: 20px;
+
+  }
+  .product-details p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  .sugar-options {
+    margin-top: 10px;
+  }
+  .sugar-options label {
+    margin-right: 15px;
+  }
+  .product-details input[type="number"] {
+    width: 75px;
+    margin-top: 8px;
+    padding: 5px;
+    font-size: 14px;
+  }
+  .add-to-cart-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4b4415;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s;
+  }
+  .add-to-cart-btn:hover {
+    background-color: #857249;
+  }

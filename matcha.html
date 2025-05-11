@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css">  
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/dos.jpg') no-repeat center/cover;
+    }
+  </style>
+</head>
+<body>
+  <a href="cart.html" class="cart-icons">
+    🛒
+  </a>
+  <header>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">Urban Roast</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="midterm_web.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="images/matcha.jpg" alt="Classic Matcha">
+    </div>
+
+    <div class="product-details">
+      <h2 id="productName">CLASSIC MATCHA</h2>
+      <p class="product-description">Green vibes only 🍵🌿 Pure matcha magic in every sip. #StayZen #UrbanRoast</p>
+      <p><strong>Price:</strong> ₱155.00</p>
+
+      <div class="sugar-options">
+        <p><strong>Sugar Level:</strong></p>
+        <label><input type="radio" name="sugar" value="20%" checked> 20%</label>
+        <label><input type="radio" name="sugar" value="50%"> 50%</label>
+        <label><input type="radio" name="sugar" value="100%"> 100%</label>
+      </div>
+
+      <label for="quantity"><p><strong>Quantity:</strong></p></label>
+      <input type="number" id="quantity" min="1" value="1">
+
+      <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const productName = document.getElementById('productName').textContent;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const sugarRadios = document.getElementsByName('sugar');
+      const addonCheckboxes = document.getElementsByName('addon');
+      const pricePerItem = 155; // Update per product
+  
+      // Get selected sugar level
+      let selectedSugar = '';
+      for (const radio of sugarRadios) {
+        if (radio.checked) {
+          selectedSugar = radio.value;
+          break;
+        }
+      }
+  
+      // Get selected add-ons
+      let selectedAddons = [];
+      for (const checkbox of addonCheckboxes) {
+        if (checkbox.checked) {
+          selectedAddons.push(checkbox.value);
+        }
+      }
+  
+      // Calculate subtotal
+      const addonCost = selectedAddons.length * 20; // Assume each add-on adds ₱20
+      const subtotal = (pricePerItem + addonCost) * quantity;
+  
+      // Add to localStorage
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({
+        product: productName,
+        sugar: selectedSugar,
+        addons: selectedAddons,
+        quantity: quantity,
+        price: pricePerItem,
+        subtotal: subtotal
+      });
+      localStorage.setItem('cart', JSON.stringify(cart));
+  
+      // Redirect to cart page
+      window.location.href = 'cart.html';
+    }
+  </script>
+  
+  
+
+</body>
+</html>

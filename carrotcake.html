@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css">  
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/dos.jpg') no-repeat center/cover;
+    }
+  </style>
+</head>
+<body>
+  <a href="cart.html" class="cart-icons">
+    🛒
+  </a>
+  <header>
+    <div class="navbar">
+        <div class="icon">
+            <h2 class="logo">Urban Roast</h2>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="midterm_web.html">HOME</a></li>
+                <li><a href="aboutus.html">ABOUT US</a></li>
+                <li><a href="menu.html">MENU</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+  <div class="product-container">
+    <div class="product-image">
+      <img src="images/carrot cake.jpg" alt="Carrot Cake">
+    </div>
+
+    <div class="product-details">
+      <h2 id="productName">CARROT CAKE</h2>
+      <p class="product-description">Cozy, spiced, and frosted to perfection 🧡🥕 #ComfortInACake #UrbanRoast</p>
+      <p><strong>Price:</strong> ₱145.00</p>
+
+      <div class="sugar-options">
+        <p><strong>Sugar Level:</strong></p>
+        <label><input type="radio" name="sugar" value="20%" checked> 20%</label>
+        <label><input type="radio" name="sugar" value="50%"> 50%</label>
+        <label><input type="radio" name="sugar" value="100%"> 100%</label>
+      </div>
+
+      <label for="quantity"><p><strong>Quantity:</strong></p></label>
+      <input type="number" id="quantity" min="1" value="1">
+
+      <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+
+  <script>
+    function addToCart() {
+      const productName = document.getElementById('productName').textContent;
+      const quantity = document.getElementById('quantity').value;
+      const sugarRadios = document.getElementsByName('sugar');
+      let selectedSugar = '';
+
+      for (const radio of sugarRadios) {
+        if (radio.checked) {
+          selectedSugar = radio.value;
+          break;
+        }
+      }
+
+      alert(`Added ${quantity} x ${productName} with ${selectedSugar} sugar level to cart!`);
+    }
+  </script>
+
+</body>
+</html>
