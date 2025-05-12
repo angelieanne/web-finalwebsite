@@ -47,10 +47,10 @@
       <p><strong>Price:</strong> ₱95.00</p>
 
       <div class="sugar-options">
-        <p><strong>Sugar Level:</strong></p>
-        <label><input type="radio" name="sugar" value="20%" checked> 20%</label>
-        <label><input type="radio" name="sugar" value="50%"> 50%</label>
-        <label><input type="radio" name="sugar" value="100%"> 100%</label>
+        <p><strong>Add-ons:</strong></p>
+        <label><input type="radio" name="addons" value="Powdered Sugar" checked> Powdered Sugar</label>
+        <label><input type="radio" name="addons" value="Chocolate Chips"> Chocolate Chips</label>
+        <label><input type="radio" name="addons" value="none"> none</label>
       </div>
 
       <label for="quantity"><p><strong>Quantity:</strong></p></label>
@@ -64,7 +64,7 @@
     function addToCart() {
       const productName = document.getElementById('productName').textContent;
       const quantity = document.getElementById('quantity').value;
-      const sugarRadios = document.getElementsByName('sugar');
+      const sugarRadios = document.getElementsByName('addons');
       let selectedSugar = '';
 
       for (const radio of sugarRadios) {
