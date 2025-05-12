@@ -48,9 +48,9 @@
 
       <div class="sugar-options">
         <p><strong>Espresso shot:</strong></p>
-        <label><input type="radio" name="Espresso shot" value="1 shot" checked> 1 shot</label>
-        <label><input type="radio" name="Espresso shot" value="2 shot"> 2 shot</label>
-        <label><input type="radio" name="Espresso shot" value="3 shot"> 3 shot</label>
+        <label><input type="radio" name="espressoshot" value="1 shot" checked> 1 shot</label>
+        <label><input type="radio" name="espressoshot" value="2 shot"> 2 shot</label>
+        <label><input type="radio" name="espressoshot" value="3 shot"> 3 shot</label>
       </div>
 
       <label for="quantity"><p><strong>Quantity:</strong></p></label>
@@ -64,7 +64,7 @@
     function addToCart() {
       const productName = document.getElementById('productName').textContent;
       const quantity = document.getElementById('quantity').value;
-      const sugarRadios = document.getElementsByName('Espresso shot');
+      const sugarRadios = document.getElementsByName('espressoshot');
       let selectedSugar = '';
 
       for (const radio of sugarRadios) {
